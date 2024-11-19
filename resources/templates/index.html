@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Age Calculator</h1>
+    <form action="/calculate" method="POST">
+        <label for="birthdate">Enter your birthdate:</label>
+        <input type="date" id="birthdate" name="birthdate" th:value="${birthdate}" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div class="result">
+        <p><strong>Age:</strong></p>
+        <p>Years: <span th:text="${years}"></span></p>
+        <p>Months: <span th:text="${months}"></span></p>
+        <p>Days: <span th:text="${days}"></span></p>
+        <p>Hours: <span th:text="${hours}"></span></p>
+        <p>Minutes: <span th:text="${minutes}"></span></p>
+        <p>Seconds: <span th:text="${seconds}"></span></p>
+    </div>
+</div>
+</body>
+</html>
